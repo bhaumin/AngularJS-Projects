@@ -157,4 +157,4 @@
   return ng.module("TicTacToeApp")
           .controller("GameCtrl", [ "$scope", controller ]);
 
-})(angular);
+}(angular));
