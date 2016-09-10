@@ -1,0 +1,46 @@
+
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/game.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  </head>
+  <body data-ng-app="TicTacToeApp">
+  <div class="container">
+    <h3>Tic Tac Toe</h3>
+    <div class="panel panel-default">
+      <div class="panel-body" ng-controller="GameCtrl">
+        <label>Board size:</label>
+        <div class="input-group">
+          <input class="form-control" name="transactionFee" ng-model="model.boardSize" ng-change="initializeBoard()" min="3" step="1" type="number" />
+        </div>
+        <br/>
+        <span>
+          <strong>Player 1:</strong> X
+          <strong>Player 2:</strong> O
+        </span>
+        <div ng-show="!model.gameOver">
+          <label>Whose Turn?:</label>
+          <span ng-show="model.whoseTurn == 'X'">Player 1</span>
+          <span ng-show="model.whoseTurn == 'O'">Player 2</span>
+        </div>
+        <div ng-show="model.gameOver">
+          <label>Winner:</label>
+          <span>Player {{model.winner}} <button ng-click="initializeBoard()">Replay</button></span>
+        </div>
+        <br/>
+        <div class="table-responsive">
+          <table class="table table-bordered" ng-show="model.boardSize && model.boardSize > 0">
+            <tr ng-repeat="row in model.board">
+              <td ng-class="{'success': col.isWinningBox}" style="width: 20px; text-align: center;" ng-repeat="col in row" ng-click="pickXorO($parent.$index, $index)">{{ col.text }}</td>
+            </tr>
+          </table>
+        </div>
+        <span class="small">(Click on one of the boxes above to get started)</span>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
