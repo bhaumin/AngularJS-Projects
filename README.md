@@ -3,4 +3,4 @@ Some fun and interesting apps/games implemented in Angular.js
 
 ## Apps
 * [Tic Tac Toe](TicTacToe)
-* [My ToDo App](MyToDoApp)
+* [My Todo App](MyTodoApp)
