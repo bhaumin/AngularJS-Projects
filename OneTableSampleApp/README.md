@@ -10,5 +10,7 @@ Custom directive to display a table dynamically from any given resultset data wi
 * Run the web server with `node server.js`. This will start a server at port 3000.
 * Open `http://localhost:3000/` in your favorite browser
 
+![alt text](https://github.com/bhaumin/AngularJS-Projects/blob/master/OneTableSampleApp/onetable_demo_zips.png "One Table Directive Demo")
+
 ## Credits
 Using Michael Bromley's [dirPaginate](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination) directive for table pagination
