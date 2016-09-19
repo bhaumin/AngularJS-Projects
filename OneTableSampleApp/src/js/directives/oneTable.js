@@ -141,10 +141,10 @@
 					var colVal = getColValue(col, row);
 
 					switch (col) {
-						case "accountNumber":
-							return $sce.trustAsHtml(customAccountUrl + "?serialnumber=" +
-								(500000 + colVal) + "\">" + (500000 + colVal) + "</a>");
-						case "email":
+						case "account.number":
+							return $sce.trustAsHtml(customAccountUrl + "?account_no=" +
+								colVal + "\">" + colVal + "</a>");
+						case "account.email":
 							return $sce.trustAsHtml("<a href=\"mailto:" + colVal + "\">" + colVal + "</a>");
 						default:
 							return colVal;
