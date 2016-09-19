@@ -1,0 +1,56 @@
+{
+	"meta": {
+		"name": "Accounts",
+		"totalRecords": 5,
+		"columns": {
+			"display": {
+				"account.number": "Account Number",
+				"account.name": "Name",
+				"account.email": "Email",
+				"account.status": "Status",
+				"account.referral.accountNumber": "Referral Account"
+			},
+			"format": {
+				"account.number": {
+					"link": {
+						"href": "https://some.custom_url.com?account_no={0}",
+						"queryParams": [ "account.number" ],
+						"target": "_blank"
+					}
+				},
+				"account.referral.accountNumber": {
+					"link": {
+						"href": "https://some.custom_url.com?account_no={0}",
+						"queryParams": [ "account.referral.accountNumber" ],
+						"target": "_blank"
+					}
+				}
+			}
+		},
+		"rows": {
+			"classMap": {
+				"account.status": [{
+					"op": "eq",
+					"value": "X",
+					"class": "danger"
+				},{
+					"op": "eq",
+					"value": "A",
+					"class": "success"
+				}],
+				"account.referral.isOnline": [{
+					"op": "eq",
+					"value": true,
+					"class": "info"
+				}]
+			}
+		}
+	},
+	"resultSet": [
+		{"id": 1, "account": { "number": 1001, "name": "abc", "email": "abc@abc.com", "status": "A", "referral": { "isOnline": true, "accountNumber": 5001 } } },
+		{"id": 2, "account": { "number": 1002, "name": "def", "email": "def@def.com", "status": "X", "referral": { "isOnline": false } } },
+		{"id": 3, "account": { "number": 1003, "name": "xyz", "email": "xyz@xyz.com", "status": "A", "referral": { "isOnline": false } } },
+		{"id": 4, "account": { "number": 1004, "name": "fsf", "email": "fsf@fsf.com", "status": "A", "referral": { "isOnline": false, "accountNumber": 5001 } } },
+		{"id": 5, "account": { "number": 1005, "name": "gxg", "email": "gxg@gxg.com", "status": "A", "referral": { "isOnline": false } } }
+	]
+}
